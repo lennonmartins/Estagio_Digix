@@ -1,3 +1,5 @@
+import clientes.Pessoa;
+
 public class Cachorro {
     Pessoa tutor;
     String raca;

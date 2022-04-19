@@ -1,3 +1,5 @@
+import clientes.DadosPessoais;
+
 public class Funcionario {
     DadosPessoais dadosPessoais;
     DadosColaboradorEmpresa dadosEmpresa;

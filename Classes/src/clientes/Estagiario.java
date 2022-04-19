@@ -1,3 +1,4 @@
+package clientes;
 public class Estagiario {
     DadosPessoais dadosPessoais;
     double salario;

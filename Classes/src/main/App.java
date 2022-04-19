@@ -1,3 +1,12 @@
+import Funcionario;
+package main;
+import clientes.Cliente;
+import clientes.Contato;
+import clientes.DadosPessoais;
+import clientes.Endereco;
+import clientes.Estagiario;
+import fabricadecarros.Carro;
+
 public class App {
     public static void main(String[] args) throws Exception {
       

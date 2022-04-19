@@ -1,3 +1,5 @@
+import clientes.Pessoa;
+
 public class DadosEmpresa {
     String CNPJ;
     String nomeFantasia;

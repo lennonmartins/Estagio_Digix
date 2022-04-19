@@ -1,3 +1,4 @@
+package clientes;
 public class DadosPessoais {
     String nome;
     String dataNascimento;

@@ -1,3 +1,4 @@
+package clientes;
 public class Cliente {
     DadosPessoais dadosPessoais;
     double totalCompras;
