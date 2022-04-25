@@ -7,6 +7,7 @@ public class Conta {
     double limite;
     boolean ativa;
     Cliente cliente;
+    Data dataDeAbertura;
 
     boolean sacar(double valorDeSaque) {
         double novoSaldo = this.saldo - valorDeSaque;
@@ -43,5 +44,17 @@ public class Conta {
         } else {
             System.out.println("Opção inválida!");
         }
+    }
+
+    double calcularRendimentoMensal(double taxa) {
+        return this.saldo * taxa;
+    }
+
+    String recuperarDadosParaImpressao(){
+        return "Nome do titular: " + this.cliente.nomecompleto + "\n" +
+                "AG: " + this.agencia + "\n" + 
+                "CC: " + this.numero + "\n" +
+                "Data de abertura: " + this.dataDeAbertura.toString() + "\n" +
+                "Saldo R$ " +  String.format("%.2f", this.saldo);
     }
 }
