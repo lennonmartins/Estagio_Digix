@@ -1,20 +1,25 @@
-import style from './List.module.scss';
-import Iten from './Iten';
-import { useState } from 'react';
 import { ITarefa } from '../../types/ITarefa';
+import Iten from './Iten';
+import style from './List.module.scss';
 
-function Lista({tarefas}: {tarefas: ITarefa[],}) {
+interface Props{
+    tarefas: ITarefa[],
+    selecionarTarefa(selecionarTarefa:ITarefa): void
+}
+
+function Lista({tarefas, selecionarTarefa}: Props) {
    
     return (
 
         <aside className={style.listaTarefa}>
             <h2>Estuda do dia</h2>
             <ul>
-                {tarefas.map((iten, index) => (
+                {tarefas.map((iten) => (
                     <Iten
-                        key={index}
-                        tarefa={iten.tarefa}
-                        tempo={iten.tempo}
+                        key={iten.id}
+                        item = {iten}
+                        selecionarTarefa={selecionarTarefa}
+                        
                     />
                 ))}
             </ul>
