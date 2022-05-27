@@ -5,7 +5,7 @@ interface Props {
 }
 
 export default function Relogio({ tempo = 0 }: Props) {
-    const horas = tempo/3600;
+    const horas = Math.floor(tempo/3600);
     const minutos = (((tempo/3600)-(horas)) * 60);
     const segundos = tempo % 60;
     const [minutoDezena, minutoUnidade] = String(minutos).padStart(2, '0');
@@ -20,7 +20,7 @@ export default function Relogio({ tempo = 0 }: Props) {
             <span className={style.relogioNumero}>{minutoUnidade}</span>
             <span className={style.relogioDivisao}>:</span>
             <span className={style.relogioNumero}>{segundoDezena}</span>
-            <span className={style.relogioNumero}>{segundoUnidade}</span>
+            <span className={style.relogioNumero}>{segundoUnidade}</span>       
         </>
     );
 }
