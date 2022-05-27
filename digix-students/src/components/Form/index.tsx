@@ -54,7 +54,7 @@ class Form extends React.Component<{
                         name="tempo"
                         id="tempo"
                         min="00:00:00"
-                        max="01:30:00" required
+                        max="2:30:00" required
                         value={this.state.tempo}
                         onChange={
                             evento => this.setState({

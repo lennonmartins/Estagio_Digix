@@ -9,6 +9,7 @@ import { ITarefa } from '../types/ITarefa';
 function App() {
   const [tarefas, setTarefas] = useState<ITarefa[]>([]);
   const [selecionado, setSelecionado] = useState<ITarefa>();
+  const [ativo, setAtivo] = useState<boolean>();
   function selecionarTarefa(tarefaSelecionada: ITarefa) {
     setSelecionado(tarefaSelecionada);
     setTarefas(tarefasanteriores => tarefasanteriores.map(tarefa => ({
@@ -36,8 +37,12 @@ function App() {
 return (
   <div className={style.AppStyle}>
     <Form setTarefas={setTarefas} />
-    <Cronometro finalizarTarefa ={finalizarTarefa} selecionado={selecionado} />
+    <Cronometro 
+    setAtivo ={setAtivo}
+    finalizarTarefa ={finalizarTarefa} 
+    selecionado={selecionado} />
     <List
+      ativo ={ativo}
       tarefas={tarefas}
       selecionarTarefa={selecionarTarefa} />
   </div>

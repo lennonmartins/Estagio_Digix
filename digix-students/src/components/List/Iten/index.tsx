@@ -3,13 +3,14 @@ import style from './iten.module.scss';
 
 interface Props {
     item: ITarefa,
-    selecionarTarefa(tarefaSelecionada: ITarefa): void
+    selecionarTarefa(tarefaSelecionada: ITarefa): void,
+    ativo: boolean | undefined
 }
 
-export default function Iten({ item, selecionarTarefa }: Props) {
+export default function Iten({ item, selecionarTarefa, ativo }: Props) {
     return (
         <li className={`${style.item} ${item.selecionado ? style.itemSelecionado : ''} ${item.completado ? style.itemCompletado : ''}`} 
-        onClick={() => !item.completado && selecionarTarefa(item)}  >
+        onClick={() => !ativo && !item.completado && selecionarTarefa(item)}  >
             <h3>{item.tarefa}</h3>
             <span>{item.tempo}</span>
             {
