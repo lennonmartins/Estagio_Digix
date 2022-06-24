@@ -6,17 +6,57 @@ import TextField from "@mui/material/TextField";
 import axios from "axios";
 import React, { useState } from "react";
 import IColaborador from "../../../types/IColaborador";
-import InputMask from 'react-input-mask';
+import { IMaskInput } from 'react-imask';
+import NumberFormat, { InputAttributes } from 'react-number-format';
 
 const token = "Basic dXN1YXJpb2xvY2FsOnNlbmhhbG9jYWw="
 const data = {
     colaboradores: [] as IColaborador[]
 }
 
+interface CustomProps {
+    onChange: (event: { target: { name: string; value: string } }) => void;
+    name: string;
+}
+
+const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
+    function TextMaskCustom(props, ref) {
+        const { onChange, ...other } = props;
+        return (
+            <IMaskInput
+                {...other}
+                mask="000.000.000-00"
+                definitions={{
+                    '#': /[1-11]/,
+                }}
+
+                onAccept={(value: any) => onChange({ target: { name: props.name, value } })}
+                overwrite
+            />
+        );
+    },
+);
+
+
+interface State {
+    textmask: string;
+    numberformat: string;
+}
 
 export default function FormCadastro() {
 
-    
+    const [values, setValues] = React.useState<State>({
+        textmask: '000.000.000-00',
+        numberformat: '000.000.000-00',
+    });
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValues({
+            ...values,
+            [event.target.name]: event.target.value,
+        });
+    };
+
     const [value, setValue] = React.useState<Date | null>(new Date());
 
     const [colaborador, setColaborador] = useState<IColaborador>({
@@ -72,22 +112,25 @@ export default function FormCadastro() {
                     </Grid>
                     <Grid item xs={4}>
                         <TextField
-                            id="outlined-basic"
+                            InputProps={{
+                                inputComponent: TextMaskCustom as any
+                            }}
+                            id="formatted-text-mask-input"
                             label="CPF*"
                             variant="outlined"
                             placeholder="CPF*"
                             value={colaborador.cpf}
+                            name="textmask"
                             onChange={evento => setColaborador({
                                 ...colaborador, cpf: evento.target.value
                             })}
                         />
-                      
+
                     </Grid>
 
                     <Grid item xs={4}>
                         <TextField
                             id="outlined-basic"
-                            type="date"
                             label="Data de Nascimento*"
                             variant="outlined"
                             value={colaborador.data_de_nascimento}
