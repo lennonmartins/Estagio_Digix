@@ -19,13 +19,13 @@
     "axios": "^0.27.2",
     "node": "^18.4.0",
     "react": "^18.2.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-imask": "^6.4.2",
     "react-input-mask": "^2.0.4",
     "react-number-format": "^4.9.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "sass": "^1.52.3",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
@@ -58,6 +58,8 @@
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
     "eslint": "^8.18.0",
-    "eslint-plugin-react": "^7.30.1"
+    "eslint-plugin-react": "^7.30.1",
+    "sass": "^1.53.0",
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }

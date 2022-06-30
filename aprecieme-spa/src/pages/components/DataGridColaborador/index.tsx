@@ -1,7 +1,9 @@
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
+import { SaveOutlined } from '@mui/icons-material';
 
 export default function DataGridColaborador() {
 
@@ -24,24 +26,35 @@ export default function DataGridColaborador() {
   }, []);
 
   return (
-    <Box
-      sx={{
-        margintTop: 100,
-        width: '100%',
-        height: 300
-      }}
-    >
-      <h2 >Lista de Colaboradores</h2>
-      <DataGrid
-        rows={colaboradores}
-        columns={columns}
-        pageSize={5}
-        autoHeight
-        rowsPerPageOptions={[5]}
-        disableSelectionOnClick={true}
-        editMode={'row'}
-      />
-    </Box>
-
+    <>
+      <Box
+        sx={{
+          margintTop: 100,
+          width: '100%',
+          height: '100%',
+        }}
+      >
+        <h2 >Lista de Colaboradores</h2>
+        <DataGrid
+          rows={colaboradores}
+          columns={columns}
+          pageSize={5}
+          autoHeight
+          rowsPerPageOptions={[5]}
+          disableSelectionOnClick={true}
+          editMode={'row'}
+        />
+      </Box>
+      {/* <div>
+        <Button
+          color="secondary"
+          type="button"
+          variant="contained"
+          href= '/cadastro'
+          endIcon={<SaveOutlined />}>
+                    Cadastrar
+        </Button>
+      </div> */}
+    </>
   );
 }

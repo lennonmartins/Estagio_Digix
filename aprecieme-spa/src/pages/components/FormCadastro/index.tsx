@@ -1,4 +1,4 @@
-import { EventOutlined, SaveOutlined } from '@mui/icons-material';
+import { EventOutlined, KeyboardBackspace, SaveOutlined } from '@mui/icons-material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
@@ -8,15 +8,19 @@ import React, { useState } from 'react';
 import IColaborador from '../../../types/IColaborador';
 import { IMaskInput } from 'react-imask';
 import NumberFormat, { InputAttributes } from 'react-number-format';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import { useNavigate } from 'react-router-dom';
 
 const data = {
   colaboradores: [] as IColaborador[]
 };
 interface Props {
-    onChange: (event: { target: { name: string; value: string } }) => void;
-    name: string;
-    token: any;
+    onChange: (event: { target: { name: string; value: string } }) => void ,
+    name: string,
 
+}
+interface Prop{
+  token: any
 }
 
 const TextMaskCustom = React.forwardRef<HTMLElement, Props>(
@@ -43,7 +47,7 @@ interface State {
     numberformat: string;
 }
 
-export default function FormCadastro({token} : Props) {
+export default function FormCadastro({token} : Prop) {
 
   const [values, setValues] = React.useState<State>({
     textmask: '000.000.000-00',
@@ -63,7 +67,7 @@ export default function FormCadastro({token} : Props) {
     id: 0,
     nome: '',
     cpf: '',
-    data_de_nascimento: '',
+    data_de_nascimento: '01/01/1900',
     usuario_id_do_chat: ''
 
   });
@@ -94,6 +98,7 @@ export default function FormCadastro({token} : Props) {
 
     <Box sx={{ flexGrow: 1 }}>
       <h2 >Cadastro de Colaboradores</h2>
+
       <form onSubmit={cadastrar} method="POST">
         <Grid container spacing={2}>
           <Grid item xs={8}>
@@ -155,8 +160,18 @@ export default function FormCadastro({token} : Props) {
               })}
             />
           </Grid>
+           
+          {/* <Grid item xs={2} className='botoes'>
+            <Button
+              color="secondary"
+              variant="contained"
+              href= '/'
+            >
+                            Voltar
+            </Button>
+          </Grid> */}
 
-          <Grid item xs={8}>
+          <Grid item xs={2}>
             <Button
               color="secondary"
               type="submit"
@@ -165,9 +180,9 @@ export default function FormCadastro({token} : Props) {
                             Cadastrar
             </Button>
           </Grid>
+          
         </Grid>
       </form>
-
 
     </Box >
   );
