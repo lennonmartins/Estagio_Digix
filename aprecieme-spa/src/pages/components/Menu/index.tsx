@@ -39,16 +39,15 @@ export default function menu() {
         <nav className={style.cabecalhoSistema__menu} aria-label="Menu principal">
           <ul className={style.cabecalhoSistema__listaDeItens}>
             <li>
-              <a className={style.cabecalhoSistema__itemDeMenu} href="#">Item</a>
+              <a className={style.cabecalhoSistema__itemDeMenu} href="#">Colaboradores</a>
             </li>
             <li>
-              <a className={style.cabecalhoSistema__itemDeMenu} href="#" aria-label="Com pílula - Você tem 456 novas notificações">Com pílula
-                <span className="pilula pilula_cor-alerta pilula_com-animacao u-margem-esquerda-pequena">456</span>
+              <a className={style.cabecalhoSistema__itemDeMenu} href="#" aria-label="Com pílula - Você tem 456 novas notificações"> Cadastro
               </a>
             </li>
             <li className="dropdown">
               <a className={style.cabecalhoSistema__itemDeMenu} aria-haspopup="true" href="#">
-                                  Com subitem <i className="far fa-angle-down u-margem-esquerda-pequena"></i>
+                                  Apreciações<i className="far fa-angle-down u-margem-esquerda-pequena"></i>
               </a>
             </li>
           </ul>
