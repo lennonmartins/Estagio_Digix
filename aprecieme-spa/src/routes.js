@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 import DataGridColaborador from './pages/components/DataGridColaborador';
 import FormCadastro from './pages/components/FormCadastro';
 import Menu from './pages/components/Menu';
@@ -14,7 +14,8 @@ export default function AprecieRouter(){
       <Menu/>
       <Routes>
         <Route path="/" element={<ListagemColaboradoresCadastrados/>}/>
-        <Route path="/cadastro" element={<CadastroColaboradores token={token}/>}/>
+        <Route path="/cadastro/:id" element={<CadastroColaboradores token={token}/>}/>
+        <Route path="/cadastro/" element={<CadastroColaboradores token={token}/>}/>
         <Route path="*" element={<Notfound/>}/>
       </Routes>
       <Footer/>

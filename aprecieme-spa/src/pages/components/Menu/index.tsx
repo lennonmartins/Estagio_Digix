@@ -34,20 +34,20 @@ export default function menu() {
     <header className={style.cabecalhoSistema}>
       <div className={style.cabecalhoSistema__containerPrimario}>
         <a href="/">
-          <img className="cabecalho-sistema__logo" width="105" src={LogoAprecie} alt="Logotipo do Digix UI"/>
+          <img className={style.cabecalhoSistema__logo} width="115" src={LogoAprecie} alt="Logotipo do Digix UI"/>
         </a>
         <nav className={style.cabecalhoSistema__menu} aria-label="Menu principal">
           <ul className={style.cabecalhoSistema__listaDeItens}>
             <li>
-              <a className={style.cabecalhoSistema__itemDeMenu} href="#">Colaboradores</a>
-            </li>
-            <li>
-              <a className={style.cabecalhoSistema__itemDeMenu} href="#" aria-label="Com pílula - Você tem 456 novas notificações"> Cadastro
-              </a>
+              <a className={style.cabecalhoSistema__itemDeMenu} href='/'>Colaboradores</a>
             </li>
             <li className="dropdown">
-              <a className={style.cabecalhoSistema__itemDeMenu} aria-haspopup="true" href="#">
-                                  Apreciações<i className="far fa-angle-down u-margem-esquerda-pequena"></i>
+              <a className={style.cabecalhoSistema__itemDeMenu}  href='/apreciacoes'>
+                                  Apreciações
+              </a>
+            </li>
+            <li>
+              <a className={style.cabecalhoSistema__itemDeMenu__Cadastro}  href='/cadastro'> Cadastro
               </a>
             </li>
           </ul>

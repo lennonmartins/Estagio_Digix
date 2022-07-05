@@ -4,12 +4,12 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import IColaborador from '../../../types/IColaborador';
 import { IMaskInput } from 'react-imask';
 import NumberFormat, { InputAttributes } from 'react-number-format';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const data = {
   colaboradores: [] as IColaborador[]
@@ -49,6 +49,21 @@ interface State {
 
 export default function FormCadastro({token} : Prop) {
 
+  const params = useParams();
+
+  if (params.id){
+    useEffect(() => {
+      axios.get(`http://127.0.0.1:8000/reconhecimentos/colaborador/${params.id}`)
+        .then(resposta => {
+          setColaborador(resposta.data);
+        })
+        .catch(erro => {
+          console.log(erro);
+        });
+
+    }, []);
+  }
+
   const [values, setValues] = React.useState<State>({
     textmask: '000.000.000-00',
     numberformat: '000.000.000-00',
@@ -67,7 +82,7 @@ export default function FormCadastro({token} : Prop) {
     id: 0,
     nome: '',
     cpf: '',
-    data_de_nascimento: '01/01/1900',
+    data_de_nascimento: '1900-01-01',
     usuario_id_do_chat: ''
 
   });
@@ -117,6 +132,7 @@ export default function FormCadastro({token} : Prop) {
           </Grid>
           <Grid item xs={4}>
             <TextField
+              fullWidth
               InputProps={{
                 inputComponent: TextMaskCustom as any
               }}
@@ -135,6 +151,7 @@ export default function FormCadastro({token} : Prop) {
 
           <Grid item xs={4}>
             <TextField
+              fullWidth
               id="outlined-basic"
               label="Data de Nascimento*"
               variant="outlined"
