@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body{
+    background-color:  #131313;
+}
+
+h1{
+    color: white;
+    font-family: Roboto;
+}
+
+.media-picture{
+    height: 400px;
+    background-image: url('https://images.alphacoders.com/120/1209632.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.review-score{
+    color: white;
+    background-color: #e6bd09;
+    padding: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+h2{
+    color: steelblue;
+    
+}
+
+p{
+    color: #bdbdbd;
+    font-family: Roboto;
+}
+
+a{
+    color: yellow;
+    font-family: Arial, Helvetica, sans-serif;
+}

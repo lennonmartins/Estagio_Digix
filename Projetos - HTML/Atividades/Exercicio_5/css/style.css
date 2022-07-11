@@ -1,0 +1,46 @@
+
+body{
+    
+    padding: 0px;
+    background-image: url('https://cdn.wallpapersafari.com/73/7/MBr1dI.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color:whitesmoke;
+    
+}
+
+.titulo-banner{
+    background-color: whitesmoke;
+    width: 80%;
+    height: auto;
+    padding-bottom: 10px;
+    padding-right: auto ;
+    padding-left: auto;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: goldenrod;
+    border-radius: 15px;
+    border: solid whitesmoke ;
+}
+
+button{
+ 
+    color:  rgba(108, 106, 255, 0.945);
+    border-radius: 15px;
+    height: 35px;
+    border-style: outset;
+    border-color: rgba(108, 106, 255, 0.945);
+    font-weight: bold;
+}   
+
+button:active { 
+    background: whitesmoke url('botao_hover.gif') no-repeat 
+    center center;
+    color:rgba(108, 106, 255, 0.945);
+    border-style: inset;
+
+ }

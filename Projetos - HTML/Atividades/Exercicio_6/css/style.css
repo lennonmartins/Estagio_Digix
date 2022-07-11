@@ -1,0 +1,32 @@
+* {
+    margin: 0%;
+}
+
+.caixa-maior {
+    width: 200px;
+    height: 200px;
+    background-color: lightpink;
+    position: relative;
+
+}
+
+.caixa-menor {
+    width: 75px;
+    height: 75px;
+    background-color: slateblue;
+    position: relative;
+    left: 30%;
+    top: 60px;
+}
+
+.caixa-2 {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+
+.caixa-3 {
+    position: absolute;
+    left: 45%;
+    bottom: 0%;
+}
